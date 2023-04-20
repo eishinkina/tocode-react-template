@@ -1,13 +1,19 @@
 # Tocode-react-template
 my template
 ## Used libraries
-- [node-sass](https://github.com/sass/sass) `npm install node-sass`
+- [node-sass](https://github.com/sass/sass) 
 
->While installing node-sass, I encountered the following error - gyp ERR. This error happens to Windows users. The following worked for me to solve this problem:
+## How to start
 
-Delete node-modules folder
-`npm install node-sass@8.0.0 --save-dev.`
-
-> The version was specified in accordance with the version of [node](https://www.npmjs.com/package/node-sass)
+`cd ~/project_name/`
 
 `npm install`
+
+`npm start`
+
+## Troubleshooting
+
+### If you will see the following error - gyp ERR. This error happens to Windows users. The following worked for me to solve this problem: 
+> `npm install node-sass@8.0.0 --save-dev.`
+
+And restart server
