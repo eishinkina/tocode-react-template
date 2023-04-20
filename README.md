@@ -8,6 +8,6 @@ my template
 Delete node-modules folder
 `npm install node-sass@8.0.0 --save-dev.`
 
- The version was specified in accordance with the version of [node] (https://www.npmjs.com/package/node-sass)
+> The version was specified in accordance with the version of [node](https://www.npmjs.com/package/node-sass)
 
 `npm install`
