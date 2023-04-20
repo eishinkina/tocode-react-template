@@ -1,9 +1,10 @@
-
+import React from "react";
+import css from "./scss/main.scss"
 
 function App() {
   return (
-    <div className="App">
-      hello
+    <div className="wrapper">
+      <p>hello</p>
     </div>
   );
 }
