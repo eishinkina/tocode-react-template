@@ -1,11 +1,15 @@
 import React from "react";
-import "./Footer.scss"
+import "./Footer.scss";
+import Container from "../../layouts/Container";
 
 function Footer() {
+  console.log('hello world')
   return (
-    <div className="footer">
-      <p>footer</p>
-    </div>
+    <Container>
+      <div className="footer">
+        <p>footer</p>
+      </div>
+    </Container>
   );
 }
 
