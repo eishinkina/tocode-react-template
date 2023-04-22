@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../../layouts/Container";
 import "./../../scss/main.scss";
+import propTypes from "prop-types"
 
 //icons
 import { ReactComponent as LogoIcon } from "../../assets/img/logo.svg";
@@ -25,6 +26,15 @@ function Header({ isLogo, isFixed }) {
       </div>
     </Container>
   );
+}
+
+Header.prototype = {
+  isLogo : propTypes.bool,
+  isFixed : propTypes.bool,
+}
+Header.defaultProps = {
+  isLogo : false,
+  isFixed : false,
 }
 
 export default Header;
