@@ -4,6 +4,7 @@ my template
 - [node-sass](https://github.com/sass/sass)  `npm i sass`
 - [Uimini](https://github.com/uimini/uimini) `npm install uimini`
 - [Classnames](https://github.com/JedWatson/classnames) `npm i classnames`
+- [prop-types](https://github.com/facebook/prop-types) `npm install prop-types --save`
 
 ## How to start
 
