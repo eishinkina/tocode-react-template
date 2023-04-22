@@ -2,14 +2,24 @@ import React from "react";
 import "./Footer.scss";
 import Container from "../../layouts/Container";
 
-function Footer() {
-  console.log('hello world')
+function Footer({...attrs}) {
   return (
-    <Container>
-      <div className="footer">
-        <p>footer</p>
-      </div>
-    </Container>
+    <footer className="Footer" {...attrs}>
+      <Container>
+        <div className="py-2 mt-6">
+          <p className="text-center text-xs" style={{ opacity: 0.6 }}>
+            Made on course{" "}
+            <a
+              target="_blank"
+              href="https://app.tocode.ru/courses/react-pro/react-app"
+              className="ui-link ml-1"
+            >
+              React.js - from scratch to result
+            </a>
+          </p>
+        </div>
+      </Container>
+    </footer>
   );
 }
 
