@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Container from "../../layouts/Container"
+import Container from "layouts/Container"
 import { Link } from "react-router-dom";
 
 

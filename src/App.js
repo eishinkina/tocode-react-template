@@ -1,10 +1,10 @@
 import React from 'react'
-import { Header, Footer } from './components'
-import './scss/main.scss'
+import { Header, Footer } from 'components'
+import 'scss/main.scss'
 import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/home'
-import AboutPage from './pages/about'
-import NotFoundPage from './pages/notFound'
+import HomePage from 'pages/home'
+import AboutPage from 'pages/about'
+import NotFoundPage from 'pages/notFound'
 
 const App = () => {
   return (

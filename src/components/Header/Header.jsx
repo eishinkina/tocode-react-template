@@ -1,9 +1,10 @@
 import React from 'react'
-import Container from '../../layouts/Container'
-import './../../scss/main.scss'
+import Container from 'layouts/Container'
+import 'scss/main.scss'
 import propTypes from 'prop-types'
 import classNames from 'classnames'
 import "./Header.scss"
+import { app } from '_config'
 
 //icons
 import { ReactComponent as LogoIcon } from '../../assets/img/logo.svg'
@@ -39,7 +40,7 @@ function Header({ isLogo, isFixed, className, ...attrs }) {
         <div className='Header flex justify-between py-2 mb-4'>
           <div className='Logo'>
             {isLogo && <LogoIcon />}
-            <span>React template </span>
+            <span>{app.name}</span>
           </div>
           {menuList}
         </div>

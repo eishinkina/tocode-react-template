@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import Container from "../../layouts/Container";
+import Container from "layouts/Container";
 
 function Footer({...attrs}) {
   return (
@@ -11,6 +11,7 @@ function Footer({...attrs}) {
             Made on course{" "}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://app.tocode.ru/courses/react-pro/react-app"
               className="ui-link ml-1"
             >
