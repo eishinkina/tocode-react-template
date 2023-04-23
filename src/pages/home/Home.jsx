@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import  {Form}  from 'components/Todo'
+import { Form, List } from 'components/Todo'
 import Container from 'layouts/Container'
-
-const List = ({ items }) => {
-  return (
-    <>
-      {items && items.length > 0
-        ? items.map((item) => <p key={item.id}>{item.title}</p>)
-        : 'item not found'}
-    </>
-  )
-}
 
 const HomePage = () => {
   const [items, setItems] = useState([])
@@ -22,10 +12,18 @@ const HomePage = () => {
     console.log(items)
   }, [items])
 
+  const handleChangeItem = (id) => {
+    // console.log(id)
+    const nextItems = items.map((el) =>
+      el.id === id ? { ...el, isChecked: !el.isChecked } : el
+    )
+    setItems(nextItems)
+  }
+
   return (
     <Container>
       <Form onSubmit={handleSubmit} />
-      <List items={items} />
+      <List items={items} onChangeItem={handleChangeItem} />
     </Container>
   )
 }

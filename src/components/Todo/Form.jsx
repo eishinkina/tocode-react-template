@@ -10,13 +10,14 @@ const Form = ({ onSubmit }) => {
     const item = {
       id: fakeId(),
       title: title,
+      isChecked: false,
     }
     onSubmit(item)
     //reset
     setTitle('')
   }
   return (
-    <form className='view-sm flex items-end' onSubmit={handleSubmit}>
+    <form className='view-sm flex items-end mb-4' onSubmit={handleSubmit}>
       <div className='ui-input' style={{ width: '100%' }}>
         <label htmlFor='input-DqS1'>Enter Todo</label>
         <input
@@ -26,10 +27,11 @@ const Form = ({ onSubmit }) => {
           placeholder='Enter todo here'
           onChange={(e) => setTitle(e.target.value)}
           required
-
         />
       </div>
-      <button className='ui-button isPrimary' type='submit'>submit</button>
+      <button className='ui-button isPrimary' type='submit'>
+        submit
+      </button>
     </form>
   )
 }
