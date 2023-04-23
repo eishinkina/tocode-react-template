@@ -17,7 +17,14 @@ const HomePage = () => {
     localStorage.setItem('items', JSON.stringify(items))
   }, [items])
 
-
+  //destroy
+  const handleRemoveItem = (id) => {
+    // console.log(id)
+    const nextItems = [...items]
+    const indexForRemove = nextItems.findIndex((el) => el.id === id)
+    nextItems.splice(indexForRemove, 1)
+    setItems(nextItems)
+  }
   //update
   const handleChangeItem = (id) => {
     // console.log(id)
@@ -30,7 +37,11 @@ const HomePage = () => {
   return (
     <Container>
       <Form onSubmit={handleSubmit} />
-      <List items={items} onChangeItem={handleChangeItem} />
+      <List
+        items={items}
+        onChangeItem={handleChangeItem}
+        onRemoveItem={handleRemoveItem}
+      />
     </Container>
   )
 }
