@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
-
+import { v4 as fakeId } from 'uuid'
 import Container from 'layouts/Container'
 
-const Form = () => {
+const Form = ({onSubmit}) => {
   const [title, setTitle] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (!title && title.length === 0) {
-      return
+    const item = {
+      id: fakeId(),
+      title: title,
+
     }
-    console.log('submitted ' + title)
+    onSubmit(item)
     //reset
     setTitle('')
   }
@@ -28,9 +30,14 @@ const Form = () => {
 }
 
 const HomePage = () => {
+  const array = []
+  const handleSubmit = (item) => {
+    array.push(item)
+    console.log(array)
+  }
   return (
     <Container>
-      <Form />
+      <Form onSubmit={handleSubmit}/>
     </Container>
   )
 }
