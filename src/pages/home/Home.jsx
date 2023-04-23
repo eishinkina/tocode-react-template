@@ -1,16 +1,38 @@
+import React, { useState } from 'react'
 
-import React from "react";
+import Container from 'layouts/Container'
 
-import Container from "layouts/Container"
+const Form = () => {
+  const [title, setTitle] = useState('')
 
-
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (!title && title.length === 0) {
+      return
+    }
+    console.log('submitted ' + title)
+    //reset
+    setTitle('')
+  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type='text'
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
+      <button type='submit'>submit</button>
+    </form>
+  )
+}
 
 const HomePage = () => {
-  return(
+  return (
     <Container>
-      <h1 className="ui-title-1">Home Page</h1>
+      <Form />
     </Container>
   )
 }
 
-export default HomePage;
+export default HomePage
