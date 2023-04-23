@@ -3,15 +3,22 @@ import { Form, List } from 'components/Todo'
 import Container from 'layouts/Container'
 
 const HomePage = () => {
-  const [items, setItems] = useState([])
+  //localstorage
+  const localItems = JSON.parse(localStorage.getItem('items'))
+  //state
+  const [items, setItems] = useState(localItems || [])
+  //store
   const handleSubmit = (item) => {
     const nextItems = [...items, item]
     setItems(nextItems)
   }
   useEffect(() => {
-    console.log(items)
+    // console.log(items)
+    localStorage.setItem('items', JSON.stringify(items))
   }, [items])
 
+
+  //update
   const handleChangeItem = (id) => {
     // console.log(id)
     const nextItems = items.map((el) =>
