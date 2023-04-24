@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Form, List } from 'components/Todo'
 import Container from 'layouts/Container'
 import todos from 'seeders/todos.json'
+import 'scss/main.scss'
 
 const HomePage = () => {
   //localstorage
@@ -39,12 +40,14 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit} />
-      <List
-        items={items}
-        onChangeItem={handleChangeItem}
-        onRemoveItem={handleRemoveItem}
-      />
+      <div className='view-content'>
+        <Form onSubmit={handleSubmit} />
+        <List
+          items={items}
+          onChangeItem={handleChangeItem}
+          onRemoveItem={handleRemoveItem}
+        />
+      </div>
     </Container>
   )
 }
