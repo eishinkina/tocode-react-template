@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Form, List } from 'components/Todo'
 import Container from 'layouts/Container'
+import todos from 'seeders/todos.json'
 
 const HomePage = () => {
   //localstorage
-  const localItems = JSON.parse(localStorage.getItem('items'))
+  const localItems = JSON.parse(localStorage.getItem('items')) || null
+  //final output
+  const items_ = localItems && localItems.length > 0 ? localItems : todos
   //state
-  const [items, setItems] = useState(localItems || [])
+  const [items, setItems] = useState(items_ || [])
   //store
   const handleSubmit = (item) => {
     const nextItems = [...items, item]
